@@ -1,0 +1,17 @@
+{
+  "name": "alltypedev/public",
+  "autoload": {
+    "psr-4": {
+      "Alltypedev\\Public\\": "src/",
+      "Calendar\\": "src/Calendar",
+      "App\\": "src/App"
+    }
+  },
+  "authors": [
+    {
+      "name": "alltypdev",
+      "email": "laurent97.ls@gmail.com"
+    }
+  ],
+  "require": {}
+}
