@@ -17,7 +17,7 @@ require '/var/www/html/calendrier/public/views/header.php';
         <?php if (isset($_GET['success'])): ?>
             <div class="container">
                 <div id="success-message" class="alert alert-success hidden">
-                    L'événement a bien été enregistré
+                    L'acton a bien été enregistrée
                 </div>
             </div>
         <?php endif; ?>
