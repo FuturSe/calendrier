@@ -27,4 +27,4 @@ try{
 
 </ul>
 
-<?php require '/var/www/html/calendrier/public/views/footer.php';
+<?php require 'calendrier/public/views/footer.php';
