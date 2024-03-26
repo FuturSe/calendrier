@@ -1,9 +1,9 @@
 <?php
 
 use Calendar\Events;
-require '/var/www/html/calendrier/public/src/boostrap.php';
-require '/var/www/html/calendrier/public/src/Calendar/Events.php';
-require '/var/www/html/calendrier/public/views/header.php';
+require 'calendrier/public/src/boostrap.php';
+require 'calendrier/public/src/Calendar/Events.php';
+require 'calendrier/public/views/header.php';
 $pdo=get_pdo();
 $events=new Events($pdo);
 if (!isset($_GET['id'])){
