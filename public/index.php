@@ -1,5 +1,5 @@
 <?php
-require '/var/www/html/calendrier/public/src/boostrap.php';
+require 'calendrier/public/src/boostrap.php';
 $pdo=get_pdo();
 $events= new Calendar\Events($pdo);
 $month = new Calendar\Month($_GET['month']?? null , $_GET['year']?? null);              
