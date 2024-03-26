@@ -106,6 +106,16 @@ class Events{
     ]);
     }
 
+    /**
+     * supprime l'événement choisie dans la base de donnée
+     * @param Event events
+     * @return bool
+     */
+    public function delete(Event $event): bool {
+      $statement = $this->pdo->prepare('DELETE FROM events WHERE id = ?');
+      return $statement->execute([$event->getId()]);
+  }
+
 }
 
 ?>
