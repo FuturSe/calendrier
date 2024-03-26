@@ -37,6 +37,19 @@ if ($_SERVER ['REQUEST_METHOD']=='POST'){
 
   }
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_event'])) {
+  $event_id = $_POST['event_id'] ?? null;
+  if ($event_id) {
+      $event = $events->find($event_id);
+      if ($event) {
+          $events->delete($event);
+          header('Location: /index.php?success=1');
+          exit();
+      }
+  }
+}
+
 ?>
 <div class="container">
   <h1>Editer l'événement : <small><?= h($event->getName()); ?> </small></h1>
@@ -45,6 +58,13 @@ if ($_SERVER ['REQUEST_METHOD']=='POST'){
       <div class="form-group">
         <button class="btn btn-primary">modifier l'événement </button>
       </div>
+  </form>
+
+  <form action="" method="post" class="form">
+  <input type="hidden" name="event_id" value="<?= $_GET['id'] ?? ''; ?>">
+    <div class="form-group">
+      <button type="submit" name="delete_event" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet événement ?');">Supprimer l'événement</button>
+    </div>
   </form>
 </div>
 
